@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 module.exports = {
-    port: process.env.PORT,
+    port: process.env.APP_PORT,
     mongourl: process.env.MONGO_DATABASE_URL,
     saltRounds: Number(process.env.SALT_ROUND_BCRYPT),
     jwtSecret: process.env.JWT_SECRET,
