@@ -1,0 +1,32 @@
+{
+  "name": "user-a-million-dream",
+  "version": "0.0.1",
+  "description": "Mini Project for coding test",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "sejutacita",
+    "backend"
+  ],
+  "author": "Imam Syuhada",
+  "license": "ISC",
+  "dependencies": {
+    "amqp": "^0.2.7",
+    "bcrypt": "^5.0.1",
+    "body-parse": "^0.1.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "fastest-validator": "^1.12.0",
+    "http": "0.0.1-security",
+    "i": "^0.3.7",
+    "jackrabbit": "^4.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
+    "npm": "^8.1.4",
+    "uuid": "^8.3.2"
+  }
+}
