@@ -25,3 +25,22 @@ services:
     restart: always
     volumes:
         - ./.docker-conf/mongodb/data/db/:/data/db
+    user:
+        build: ./user
+        image: user/sejuta
+        container_name: user-lallo
+        env_file:
+            - ./user/.env
+        ports:
+            - "${APP_PORT}:${APP_PORT}"
+        restart: always
+    market:
+        build: ./market
+        image: market/sejuta
+        container_name: market-lallo
+        env_file:
+            - ./market/.env
+        ports:
+            - "${APP_PORT}:${APP_PORT}"
+        restart: always
+    
