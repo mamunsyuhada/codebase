@@ -18,29 +18,32 @@ services:
     container_name: 'mongo-sejuta'
     image: mongo:latest
     ports:
-      - "${PORT}:27017"
+      - '${PORT}:27017'
     environment:
-      - "MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}"
-      - "MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}"
+      - 'MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}'
+      - 'MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}'
     restart: always
     volumes:
-        - ./.docker-conf/mongodb/data/db/:/data/db
+      - ./.docker-conf/mongodb/data/db/:/data/db
   user:
-      build: ./user
-      image: user/sejuta
-      container_name: user-lallo
-      env_file:
-          - ./user/.env
-      ports:
-          - "${APP_PORT}:${APP_PORT}"
-      restart: always
+    build: ./user
+    image: user/sejuta
+    container_name: user-sejuta
+    depends_on:
+      - rabbitmq
+      - mongo
+    env_file: ./user/.env
+    ports:
+      - '${APP_PORT}:${APP_PORT}'
+    restart: always
   market:
-      build: ./market
-      image: market/sejuta
-      container_name: market-lallo
-      env_file:
-          - ./market/.env
-      ports:
-          - "${APP_PORT}:${APP_PORT}"
-      restart: always
-    
+    build: ./market
+    image: market/sejuta
+    container_name: market-sejuta
+    depends_on:
+      - rabbitmq
+      - mongo
+    env_file: ./market/.env
+    ports:
+      - '${APP_PORT}:${APP_PORT}'
+    restart: always
