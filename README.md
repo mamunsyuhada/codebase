@@ -2,11 +2,11 @@
 
 - [x] Use NodeJS Express.js
 - [ ] Use Golang Gin
-- [ ] Use MongoDB
-- [ ] Add JWT
+- [x] Use MongoDB
+- [x] Add JWT
 - [ ] Refresh Token
-- [ ] Create Role Admin and User (Customer)
-- [ ] Microservices with RabbitMQ
+- [x] Create Role Admin and User (Customer)
+- [x] Microservices with RabbitMQ
 - [ ] Push to DockerHub
 - [ ] Create YML Kubernetes Deployment and create single execute
 - [ ] Create Swagger Docs
